@@ -30,8 +30,11 @@ public class Pessoa implements Serializable{
 	@OneToMany(mappedBy = "pessoa", cascade = CascadeType.ALL)
 	List<Endereco> endereco = new ArrayList<>();
 	
-	@OneToOne(cascade = CascadeType.ALL, mappedBy = "pessoa")
+	@OneToOne(mappedBy = "pessoa",cascade = CascadeType.ALL)
 	private HistoricoAcademico historicoAcademico;
+	
+	@OneToMany(mappedBy = "pessoa", cascade = CascadeType.ALL)
+	List<ExperienciaProfissional> experienciasProfissionais = new ArrayList<>();
 	
 	@OneToMany(mappedBy = "pessoa", cascade = CascadeType.ALL)
 	List<SoftSkills> softSkills = new ArrayList<>();
@@ -116,6 +119,8 @@ public class Pessoa implements Serializable{
 	public void setHistoricoAcademico(HistoricoAcademico historicoAcademico) {
 		this.historicoAcademico = historicoAcademico;
 	}
+	
+	
 
 	/*public List<RedesSociais> getRedes() {
 		return redes;
@@ -124,6 +129,14 @@ public class Pessoa implements Serializable{
 	public void setRedes(List<RedesSociais> redes) {
 		this.redes = redes;
 	}*/
+
+	public List<ExperienciaProfissional> getExperienciasProfissionais() {
+		return experienciasProfissionais;
+	}
+
+	public void setExperienciasProfissionais(List<ExperienciaProfissional> experienciasProfissionais) {
+		this.experienciasProfissionais = experienciasProfissionais;
+	}
 
 	public List<SoftSkills> getSoftSkills() {
 		return softSkills;
