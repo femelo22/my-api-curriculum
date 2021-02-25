@@ -1,13 +1,21 @@
 package br.com.luiz.curriculo.domain;
 
-import javax.persistence.Column;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 @Entity
-public class Pessoa {
+public class Pessoa implements Serializable{
+
+	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,6 +26,18 @@ public class Pessoa {
 	private String email;
 	private String telefone;
 	private String pequenaDescricao;
+	
+	@OneToMany(mappedBy = "pessoa", cascade = CascadeType.ALL)
+	List<Endereco> endereco = new ArrayList<>();
+	
+	@OneToOne(cascade = CascadeType.ALL, mappedBy = "pessoa")
+	private HistoricoAcademico historicoAcademico;
+	
+	//List<RedesSociais> redes = new ArrayList<>();
+	
+	//List<SoftSkills> softSkills = new ArrayList<>();
+	
+	//List<HardSkills> hardSkills = new ArrayList<>();
 	
 	public Pessoa() {}
 
@@ -79,6 +99,49 @@ public class Pessoa {
 	public void setPequenaDescricao(String pequenaDescricao) {
 		this.pequenaDescricao = pequenaDescricao;
 	}
+	
+
+	public List<Endereco> getEndereco() {
+		return endereco;
+	}
+
+	public void setEndereco(List<Endereco> endereco) {
+		this.endereco = endereco;
+	}
+	
+	public HistoricoAcademico getHistoricoAcademico() {
+		return historicoAcademico;
+	}
+
+	public void setHistoricoAcademico(HistoricoAcademico historicoAcademico) {
+		this.historicoAcademico = historicoAcademico;
+	}
+
+	/*	public List<RedesSociais> getRedes() {
+		return redes;
+	}
+
+	public void setRedes(List<RedesSociais> redes) {
+		this.redes = redes;
+	}
+
+	public List<SoftSkills> getSoftSkills() {
+		return softSkills;
+	}
+
+	public void setSoftSkills(List<SoftSkills> softSkills) {
+		this.softSkills = softSkills;
+	}
+
+	public List<HardSkills> getHardSkills() {
+		return hardSkills;
+	}
+
+	public void setHardSkills(List<HardSkills> hardSkills) {
+		this.hardSkills = hardSkills;
+	}*/
+
+	
 
 	@Override
 	public int hashCode() {
