@@ -33,10 +33,10 @@ public class Pessoa implements Serializable{
 	@OneToOne(cascade = CascadeType.ALL, mappedBy = "pessoa")
 	private HistoricoAcademico historicoAcademico;
 	
+	@OneToMany(mappedBy = "pessoa", cascade = CascadeType.ALL)
+	List<SoftSkills> softSkills = new ArrayList<>();
+	
 	//List<RedesSociais> redes = new ArrayList<>();
-	
-	//List<SoftSkills> softSkills = new ArrayList<>();
-	
 	//List<HardSkills> hardSkills = new ArrayList<>();
 	
 	public Pessoa() {}
@@ -117,13 +117,13 @@ public class Pessoa implements Serializable{
 		this.historicoAcademico = historicoAcademico;
 	}
 
-	/*	public List<RedesSociais> getRedes() {
+	/*public List<RedesSociais> getRedes() {
 		return redes;
 	}
 
 	public void setRedes(List<RedesSociais> redes) {
 		this.redes = redes;
-	}
+	}*/
 
 	public List<SoftSkills> getSoftSkills() {
 		return softSkills;
@@ -133,7 +133,7 @@ public class Pessoa implements Serializable{
 		this.softSkills = softSkills;
 	}
 
-	public List<HardSkills> getHardSkills() {
+	/*public List<HardSkills> getHardSkills() {
 		return hardSkills;
 	}
 
