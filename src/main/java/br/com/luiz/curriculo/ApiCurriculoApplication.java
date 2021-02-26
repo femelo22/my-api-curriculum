@@ -77,7 +77,7 @@ public class ApiCurriculoApplication implements CommandLineRunner{
 		RedesSociais redes4 = new RedesSociais(null, "Repl", "https://repl.it/@femelo22", pessoa);
 		
 		HardSkills hard1 = new HardSkills(null, "Tecnologias",pessoa);
-		hard1.getConhecimentos().addAll(Arrays.asList("Java 11","Spring Boot","Spring Security","REST","API", "Javascript","Boas práticas e padrões de projeto"));
+		hard1.getConhecimentos().addAll(Arrays.asList("Java 11","Spring Boot","Spring Security","REST","API", "Javascript","Node JS","Boas práticas e padrões de projeto"));
 		
 		HardSkills hard2 = new HardSkills(null, "Servidores",pessoa);
 		hard2.getConhecimentos().addAll(Arrays.asList("Amazon S3","Apache"));
@@ -89,7 +89,7 @@ public class ApiCurriculoApplication implements CommandLineRunner{
 		softRepository.saveAll(Arrays.asList(soft1,soft2,soft3,soft4));
 		redesRepository.saveAll(Arrays.asList(redes1,redes2,redes3,redes4));
 		hardRepository.saveAll(Arrays.asList(hard1,hard2));
-	
+		
 		
 	}
 

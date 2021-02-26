@@ -1,10 +1,5 @@
 package br.com.luiz.curriculo.domain;
 
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 public class CursosComplementares {
 
 	private Integer id;
@@ -15,14 +10,17 @@ public class CursosComplementares {
 	
 	private String linkCertificado;
 	
+	private Pessoa pessoa;
+	
 	public CursosComplementares () {}
 
-	public CursosComplementares(Integer id, String descricao, String dataConclusao, String linkCertificado) {
+	public CursosComplementares(Integer id, String descricao, String dataConclusao, String linkCertificado,Pessoa pessoa) {
 		super();
 		this.id = id;
 		this.descricao = descricao;
 		this.dataConclusao = dataConclusao;
 		this.linkCertificado = linkCertificado;
+		this.pessoa = pessoa;
 	}
 
 	public Integer getId() {
@@ -57,5 +55,14 @@ public class CursosComplementares {
 	public void setDataConclusao(String dataConclusao) {
 		this.dataConclusao = dataConclusao;
 	}
+
+	public Pessoa getPessoa() {
+		return pessoa;
+	}
+
+	public void setPessoa(Pessoa pessoa) {
+		this.pessoa = pessoa;
+	}
+	
 	
 }
