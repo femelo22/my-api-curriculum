@@ -1,5 +1,10 @@
 package br.com.luiz.curriculo.domain;
 
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 public class CursosComplementares {
 
 	private Integer id;
@@ -11,7 +16,6 @@ public class CursosComplementares {
 	private String linkCertificado;
 	
 	public CursosComplementares () {}
-
 
 	public CursosComplementares(Integer id, String descricao, String dataConclusao, String linkCertificado) {
 		super();

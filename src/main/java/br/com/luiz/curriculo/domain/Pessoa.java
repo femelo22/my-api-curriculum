@@ -2,6 +2,8 @@ package br.com.luiz.curriculo.domain;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -30,6 +32,10 @@ public class Pessoa implements Serializable{
 	@OneToMany(mappedBy = "pessoa", cascade = CascadeType.ALL)
 	List<Endereco> endereco = new ArrayList<>();
 	
+	
+	@OneToMany(mappedBy = "pessoa", cascade = CascadeType.ALL)
+	List<RedesSociais> redes = new ArrayList<>();
+	
 	@OneToOne(mappedBy = "pessoa",cascade = CascadeType.ALL)
 	private HistoricoAcademico historicoAcademico;
 	
@@ -38,9 +44,9 @@ public class Pessoa implements Serializable{
 	
 	@OneToMany(mappedBy = "pessoa", cascade = CascadeType.ALL)
 	List<SoftSkills> softSkills = new ArrayList<>();
-	
-	//List<RedesSociais> redes = new ArrayList<>();
-	//List<HardSkills> hardSkills = new ArrayList<>();
+
+	@OneToMany(mappedBy = "pessoa", cascade = CascadeType.ALL)
+	List<HardSkills> hardSkills = new ArrayList<>();
 	
 	public Pessoa() {}
 
@@ -120,15 +126,13 @@ public class Pessoa implements Serializable{
 		this.historicoAcademico = historicoAcademico;
 	}
 	
-	
-
-	/*public List<RedesSociais> getRedes() {
+	public List<RedesSociais> getRedes() {
 		return redes;
 	}
 
 	public void setRedes(List<RedesSociais> redes) {
 		this.redes = redes;
-	}*/
+	}
 
 	public List<ExperienciaProfissional> getExperienciasProfissionais() {
 		return experienciasProfissionais;
@@ -146,14 +150,13 @@ public class Pessoa implements Serializable{
 		this.softSkills = softSkills;
 	}
 
-	/*public List<HardSkills> getHardSkills() {
+	public List<HardSkills> getHardSkills() {
 		return hardSkills;
 	}
 
 	public void setHardSkills(List<HardSkills> hardSkills) {
 		this.hardSkills = hardSkills;
-	}*/
-
+	}
 	
 
 	@Override

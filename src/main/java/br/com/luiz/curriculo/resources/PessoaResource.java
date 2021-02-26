@@ -22,6 +22,5 @@ public class PessoaResource {
 	public ResponseEntity<List<Pessoa>> findAll(){
 		List<Pessoa> eu = pessoaService.findAll();
 		return ResponseEntity.ok().body(eu);
-		
 	}
 }
