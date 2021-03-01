@@ -17,4 +17,5 @@ public class RedeSocialService {
 	public List<RedesSociais> findAll(){
 		return redeRepository.findAll();	
 	}
+
 }

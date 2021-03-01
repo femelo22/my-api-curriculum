@@ -25,8 +25,8 @@ public class RedeSocialResource {
 		
 		List<RedesSociais> redes = redeService.findAll();
 		
-		List<RedeSocialDTO> redeDto = redes.stream().map(obj -> new RedeSocialDTO(obj)).collect(Collectors.toList());
+		List<RedeSocialDTO> redesDto = redes.stream().map(obj -> new RedeSocialDTO(obj)).collect(Collectors.toList());
 		
-		return ResponseEntity.ok().body(redeDto);
+		return ResponseEntity.ok().body(redesDto);
 	}
 }

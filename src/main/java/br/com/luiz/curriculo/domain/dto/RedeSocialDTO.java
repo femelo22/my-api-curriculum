@@ -7,14 +7,14 @@ public class RedeSocialDTO {
 	private String rede;
 	private String link;
 	
-	private Integer idPessoa;
+	private String pessoa;
 	
 	public RedeSocialDTO() {}
 	
 	public RedeSocialDTO(RedesSociais redes) {
 		this.rede = redes.getRede();
 		this.link = redes.getLink();
-		this.idPessoa = redes.getPessoa().getId();
+		this.pessoa = redes.getPessoa().getNome() + " de " + redes.getPessoa().getSobrenome();
 	}
 
 	public String getRede() {
@@ -33,16 +33,13 @@ public class RedeSocialDTO {
 		this.link = link;
 	}
 
-	public Integer getIdPessoa() {
-		return idPessoa;
+	public String getPessoa() {
+		return pessoa;
 	}
 
-	public void setIdPessoa(Integer idPessoa) {
-		this.idPessoa = idPessoa;
+	public void setPessoa(String pessoa) {
+		this.pessoa = pessoa;
 	}
 
-	
-	
-	
 	
 }

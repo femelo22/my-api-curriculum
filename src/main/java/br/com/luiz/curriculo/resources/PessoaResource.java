@@ -18,9 +18,11 @@ public class PessoaResource {
 	@Autowired
 	private PessoaService pessoaService;
 	
-	@GetMapping
+	@GetMapping()
 	public ResponseEntity<List<Pessoa>> findAll(){
 		List<Pessoa> eu = pessoaService.findAll();
 		return ResponseEntity.ok().body(eu);
 	}
+	
+
 }
