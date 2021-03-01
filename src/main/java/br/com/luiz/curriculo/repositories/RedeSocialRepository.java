@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import br.com.luiz.curriculo.domain.RedesSociais;
 
 @Repository
-public interface RedesSociaisRepository extends JpaRepository<RedesSociais, Integer>{
+public interface RedeSocialRepository extends JpaRepository<RedesSociais, Integer>{
 
 }

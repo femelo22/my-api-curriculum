@@ -1,7 +1,19 @@
 package br.com.luiz.curriculo.domain;
 
-public class CursosComplementares {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+@Entity
+public class CursoComplementar {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	
 	private String descricao;
@@ -10,11 +22,14 @@ public class CursosComplementares {
 	
 	private String linkCertificado;
 	
+	@JsonIgnore
+	@ManyToOne
+	@JoinColumn(name = "pessoa_id")
 	private Pessoa pessoa;
 	
-	public CursosComplementares () {}
+	public CursoComplementar () {}
 
-	public CursosComplementares(Integer id, String descricao, String dataConclusao, String linkCertificado,Pessoa pessoa) {
+	public CursoComplementar(Integer id, String descricao, String dataConclusao, String linkCertificado,Pessoa pessoa) {
 		super();
 		this.id = id;
 		this.descricao = descricao;

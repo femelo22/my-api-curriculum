@@ -7,6 +7,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import br.com.luiz.curriculo.domain.CursoComplementar;
 import br.com.luiz.curriculo.domain.Endereco;
 import br.com.luiz.curriculo.domain.ExperienciaProfissional;
 import br.com.luiz.curriculo.domain.HardSkills;
@@ -14,12 +15,13 @@ import br.com.luiz.curriculo.domain.HistoricoAcademico;
 import br.com.luiz.curriculo.domain.Pessoa;
 import br.com.luiz.curriculo.domain.RedesSociais;
 import br.com.luiz.curriculo.domain.SoftSkills;
+import br.com.luiz.curriculo.repositories.CursoComplementarRepository;
 import br.com.luiz.curriculo.repositories.EnderecoRepository;
 import br.com.luiz.curriculo.repositories.ExperienciaRepository;
 import br.com.luiz.curriculo.repositories.HardSkillsRepository;
 import br.com.luiz.curriculo.repositories.HistoricoAcademicoRepository;
 import br.com.luiz.curriculo.repositories.PessoaRepository;
-import br.com.luiz.curriculo.repositories.RedesSociaisRepository;
+import br.com.luiz.curriculo.repositories.RedeSocialRepository;
 import br.com.luiz.curriculo.repositories.SoftSkillsRepository;
 
 @SpringBootApplication
@@ -45,10 +47,13 @@ public class ApiCurriculoApplication implements CommandLineRunner{
 	private ExperienciaRepository experienciaRepository;
 	
 	@Autowired
-	private RedesSociaisRepository redesRepository;
+	private RedeSocialRepository redesRepository;
 	
 	@Autowired
 	private HardSkillsRepository hardRepository;
+	
+	@Autowired
+	private CursoComplementarRepository cursosRepository;
 	
 	public void run(String... args) throws Exception {
 		
@@ -82,6 +87,35 @@ public class ApiCurriculoApplication implements CommandLineRunner{
 		HardSkills hard2 = new HardSkills(null, "Servidores",pessoa);
 		hard2.getConhecimentos().addAll(Arrays.asList("Amazon S3","Apache"));
 		
+		HardSkills hard3 = new HardSkills(null, "Banco de dados",pessoa);
+		hard3.getConhecimentos().addAll(Arrays.asList("MySQL"));
+		
+		
+		CursoComplementar c1 = new CursoComplementar(null, "Criando um controle de vendas desktop com Java e MySQL", "30 de Julho de 2020",
+				"https://drive.google.com/file/d/1tMfvinB1pG2NZk645AoV6ZvakQviFFOM/view?usp=sharing", pessoa);
+		
+		CursoComplementar c2 = new CursoComplementar(null, "Projetos ágeis com SCRUM", "13 de Outubro de 2020",
+				"https://drive.google.com/file/d/1m7eoxsjvxvbM2Tl17NvnLVv93sGg5IIB/view?usp=sharing", pessoa);
+		
+		CursoComplementar c3 = new CursoComplementar(null, "Intodrução ao Node JS + Express", "9 de Outubro de 2020",
+				"https://drive.google.com/file/d/1tMfvinB1pG2NZk645AoV6ZvakQviFFOM/view?usp=sharing", pessoa);
+		
+		CursoComplementar c4 = new CursoComplementar(null, "IT Trends: Processos Seletivos", "24 de Setembro de 2020",
+				"https://drive.google.com/file/d/15GwX-tqWnBoxPx9rlprwdRFEooQ8qUNE/view?usp=sharing", pessoa);
+		
+		CursoComplementar c5 = new CursoComplementar(null, "Hackathon - Combate a pandemia", "23 de Julho de 2020",
+				"https://drive.google.com/file/d/1zv3h27PhCRbP0xma_vxiTrsfQg6rKsOn/view?usp=sharing", pessoa);
+		
+		CursoComplementar c6 = new CursoComplementar(null, "Participação no evento MEETUP", "12 de Maio de 2020",
+				"https://drive.google.com/file/d/1GZx6NTo7IQimv9fm8GCfeWO4UN-1yDgb/view?usp=sharing", pessoa);
+
+		CursoComplementar c7 = new CursoComplementar(null, "Desenvolvimento web com PHP e MySQL", "14 de Abril de 2020",
+				"https://drive.google.com/file/d/1UoWPQ-r3uYSdpcxKUjrBjk73xwjes-Cl/view?usp=sharing", pessoa);
+
+		CursoComplementar c8 = new CursoComplementar(null, "Congresso Metodista: Tecnologia, Criatividade e Ética", "23 de Julho de 2020",
+				"https://drive.google.com/file/d/1tgAqHL86BzRKxnkc_wKl0rn97KmUFhcA/view?usp=sharing", pessoa);
+		
+		
 		pessoaRepository.save(pessoa);
 		enderecoRepository.save(end);
 		historicoRepository.save(histAcad);
@@ -89,8 +123,7 @@ public class ApiCurriculoApplication implements CommandLineRunner{
 		softRepository.saveAll(Arrays.asList(soft1,soft2,soft3,soft4));
 		redesRepository.saveAll(Arrays.asList(redes1,redes2,redes3,redes4));
 		hardRepository.saveAll(Arrays.asList(hard1,hard2));
-		
-		
+		cursosRepository.saveAll(Arrays.asList(c1,c2,c3,c4,c5,c6,c7,c8));
 	}
 
 }

@@ -32,9 +32,8 @@ public class Pessoa implements Serializable{
 	@OneToMany(mappedBy = "pessoa", cascade = CascadeType.ALL)
 	List<Endereco> endereco = new ArrayList<>();
 	
-	
 	@OneToMany(mappedBy = "pessoa", cascade = CascadeType.ALL)
-	List<RedesSociais> redes = new ArrayList<>();
+	List<RedesSociais> redesSociais = new ArrayList<>();
 	
 	@OneToOne(mappedBy = "pessoa",cascade = CascadeType.ALL)
 	private HistoricoAcademico historicoAcademico;
@@ -47,6 +46,9 @@ public class Pessoa implements Serializable{
 
 	@OneToMany(mappedBy = "pessoa", cascade = CascadeType.ALL)
 	List<HardSkills> hardSkills = new ArrayList<>();
+	
+	@OneToMany(mappedBy = "pessoa", cascade = CascadeType.ALL)
+	List<CursoComplementar> cursosComplementares = new ArrayList<>();
 	
 	public Pessoa() {}
 
@@ -125,13 +127,13 @@ public class Pessoa implements Serializable{
 	public void setHistoricoAcademico(HistoricoAcademico historicoAcademico) {
 		this.historicoAcademico = historicoAcademico;
 	}
-	
-	public List<RedesSociais> getRedes() {
-		return redes;
+
+	public List<RedesSociais> getRedesSociais() {
+		return redesSociais;
 	}
 
-	public void setRedes(List<RedesSociais> redes) {
-		this.redes = redes;
+	public void setRedesSociais(List<RedesSociais> redesSociais) {
+		this.redesSociais = redesSociais;
 	}
 
 	public List<ExperienciaProfissional> getExperienciasProfissionais() {
@@ -158,6 +160,14 @@ public class Pessoa implements Serializable{
 		this.hardSkills = hardSkills;
 	}
 	
+
+	public List<CursoComplementar> getCursosComplementares() {
+		return cursosComplementares;
+	}
+
+	public void setCursosComplementares(List<CursoComplementar> cursosComplementares) {
+		this.cursosComplementares = cursosComplementares;
+	}
 
 	@Override
 	public int hashCode() {
