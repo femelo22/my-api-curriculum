@@ -14,7 +14,7 @@ public class RedeSocialDTO {
 	public RedeSocialDTO(RedesSociais redes) {
 		this.rede = redes.getRede();
 		this.link = redes.getLink();
-		this.pessoa = redes.getPessoa().getNome() + " de " + redes.getPessoa().getSobrenome();
+		this.pessoa = this.meuNome();
 	}
 
 	public String getRede() {
@@ -41,5 +41,7 @@ public class RedeSocialDTO {
 		this.pessoa = pessoa;
 	}
 
-	
+	public String meuNome() {
+		return "Luiz Fernando de Melo Gonçalves";
+	}
 }
