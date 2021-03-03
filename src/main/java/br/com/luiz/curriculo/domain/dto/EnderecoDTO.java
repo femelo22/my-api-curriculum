@@ -4,8 +4,6 @@ import br.com.luiz.curriculo.domain.Endereco;
 import br.com.luiz.curriculo.domain.Pessoa;
 
 public class EnderecoDTO {
-
-	private Integer pessoaId;
 	
 	private String pais;
 	private String estado;
@@ -18,7 +16,6 @@ public class EnderecoDTO {
 	
 	
 	public EnderecoDTO(Endereco endereco) {
-		this.pessoaId = endereco.getPessoa().getId();
 		this.pais = endereco.getPais();
 		this.estado = endereco.getEstado();
 		this.cidade = endereco.getCidade();
@@ -91,14 +88,6 @@ public class EnderecoDTO {
 
 	public void setCep(String cep) {
 		this.cep = cep;
-	}
-
-	public Integer getPessoaId() {
-		return pessoaId;
-	}
-
-	public void setPessoaId(Integer pessoaId) {
-		this.pessoaId = pessoaId;
 	}
 	
 }

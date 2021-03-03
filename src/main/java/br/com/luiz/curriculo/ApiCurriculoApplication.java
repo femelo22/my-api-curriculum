@@ -85,7 +85,7 @@ public class ApiCurriculoApplication implements CommandLineRunner{
 		hard1.getConhecimentos().addAll(Arrays.asList("Java 11","Spring Boot","Spring Security","REST","API", "Javascript","Node JS","Boas práticas e padrões de projeto"));
 		
 		HardSkills hard2 = new HardSkills(null, "Servidores",pessoa);
-		hard2.getConhecimentos().addAll(Arrays.asList("Amazon S3","Apache"));
+		hard2.getConhecimentos().addAll(Arrays.asList("Amazon S3","Apache","Heroku"));
 		
 		HardSkills hard3 = new HardSkills(null, "Banco de dados",pessoa);
 		hard3.getConhecimentos().addAll(Arrays.asList("MySQL"));

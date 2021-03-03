@@ -1,9 +1,8 @@
 package br.com.luiz.curriculo.domain.dto;
 
 import br.com.luiz.curriculo.domain.CursoComplementar;
-import br.com.luiz.curriculo.domain.interfaces.MyNameInterface;
 
-public class CursosDTO implements MyNameInterface{
+public class CursoDTO {
 	
 	private String descricao;
 	
@@ -12,14 +11,11 @@ public class CursosDTO implements MyNameInterface{
 	private String linkCertificado;
 	
 	private String pessoa;
-
-	public CursosDTO() {}
-
-	public CursosDTO(CursoComplementar curso) {
+	
+	public CursoDTO(CursoComplementar curso) {
 		this.descricao = curso.getDescricao();
 		this.dataConclusao = curso.getDataConclusao();
 		this.linkCertificado = curso.getLinkCertificado();
-		this.pessoa = MyNameInterface.getMyName();
 	}
 
 	public String getDescricao() {
@@ -53,7 +49,5 @@ public class CursosDTO implements MyNameInterface{
 	public void setPessoa(String pessoa) {
 		this.pessoa = pessoa;
 	}
-	
-	
 	
 }
