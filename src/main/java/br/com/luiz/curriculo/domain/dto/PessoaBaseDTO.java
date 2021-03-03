@@ -1,10 +1,6 @@
 package br.com.luiz.curriculo.domain.dto;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import br.com.luiz.curriculo.domain.Pessoa;
-import br.com.luiz.curriculo.domain.RedesSociais;
 
 public class PessoaBaseDTO {
 
@@ -13,8 +9,6 @@ public class PessoaBaseDTO {
 	private String sobrenome;
 	private String email;
 	private String pequenaDescricao;
-	
-	List<RedesSociais> redesSociais = new ArrayList<>();
 	
 	public PessoaBaseDTO() {}
 	

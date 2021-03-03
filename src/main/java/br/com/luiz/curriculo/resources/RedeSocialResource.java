@@ -23,10 +23,8 @@ public class RedeSocialResource {
 	@GetMapping(value = "/redes-sociais")
 	public ResponseEntity<List<RedeSocialDTO>> findRedes(){
 		
-		List<RedesSociais> redes = redeService.findAll();
+		List<RedeSocialDTO> redes = redeService.findRedes();
 		
-		List<RedeSocialDTO> redesDto = redes.stream().map(obj -> new RedeSocialDTO(obj)).collect(Collectors.toList());
-		
-		return ResponseEntity.ok().body(redesDto);
+		return ResponseEntity.ok().body(redes);
 	}
 }

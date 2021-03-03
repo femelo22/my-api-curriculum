@@ -1,8 +1,9 @@
 package br.com.luiz.curriculo.domain.dto;
 
 import br.com.luiz.curriculo.domain.RedesSociais;
+import br.com.luiz.curriculo.domain.interfaces.MyNameInterface;
 
-public class RedeSocialDTO {
+public class RedeSocialDTO implements MyNameInterface{
 
 	private String rede;
 	private String link;
@@ -14,13 +15,14 @@ public class RedeSocialDTO {
 	public RedeSocialDTO(RedesSociais redes) {
 		this.rede = redes.getRede();
 		this.link = redes.getLink();
-		this.pessoa = this.meuNome();
+		this.pessoa = MyNameInterface.getMyName();
 	}
 
 	public String getRede() {
 		return rede;
 	}
 
+	
 	public void setRede(String rede) {
 		this.rede = rede;
 	}
