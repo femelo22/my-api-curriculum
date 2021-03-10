@@ -59,8 +59,8 @@ public class ApiCurriculoApplication implements CommandLineRunner{
 		
 		System.out.println("Rodante ✔");
 		
-		Pessoa pessoa = new Pessoa(null, "Luiz Fernando", "Melo Gonçalves", "luiz123jfmg@gmail.com", "32999956148",
-				"Aspirante a desenvolvedor, apaixonado pela programação e motivado por novos desafios!");
+		Pessoa pessoa = new Pessoa(null, "Luiz Fernando", "Melo Gonçalves", "lf.devmelo@gmail.com", "32999956148",
+				"Estudante de sistemas de informação e amante da programação, futuro dev master!");
 		
 		Endereco end = new Endereco(null, "Brasil", "Juiz de Fora", "Minas Gerais", "Rua Coronel Vaz de Melo", "124", "201", "Bom Pastor", "36021-370", pessoa);
 		
@@ -69,7 +69,7 @@ public class ApiCurriculoApplication implements CommandLineRunner{
 		SoftSkills soft1 = new SoftSkills(null, "Comunicativo", "Comunicação clara com as pessoa que trabalho e um bom ouvinte", pessoa);
 		SoftSkills soft2 = new SoftSkills(null, "Flexível", "Boa habilidade de adaptação a mudanças", pessoa);
 		SoftSkills soft3 = new SoftSkills(null, "Motivador", "Gosto de incentivar a equipe a dar sempre seu melhor", pessoa);
-		SoftSkills soft4 = new SoftSkills(null, "Positvo", "Por mais difíceis que sejam os desafios, sempre matenho a positividade", pessoa);
+		SoftSkills soft4 = new SoftSkills(null, "Positvo", "Por mais difíceis que sejam os desafios, busco sempre manter a positividade", pessoa);
 		
 		ExperienciaProfissional exp1 = new ExperienciaProfissional(null, "Nvoip", "Java Junior Developer", "Tempo integral", "Set. de 2020" , "Atual", pessoa);
 		ExperienciaProfissional exp2 = new ExperienciaProfissional(null, "Nvoip", "Java Developer", "Estagio", "Jun. de 2020" , "Set. de 2020", pessoa);
@@ -82,7 +82,7 @@ public class ApiCurriculoApplication implements CommandLineRunner{
 		RedesSociais redes4 = new RedesSociais(null, "Repl", "https://repl.it/@femelo22", pessoa);
 		
 		HardSkills hard1 = new HardSkills(null, "Tecnologias",pessoa);
-		hard1.getConhecimentos().addAll(Arrays.asList("Java 11","Spring Boot","Spring Security","REST","API", "Javascript","Node JS","Boas práticas e padrões de projeto"));
+		hard1.getConhecimentos().addAll(Arrays.asList("Java 11","Spring Boot", "Github" ,"Spring Security","REST","API", "Javascript","Node JS","Boas práticas e padrões de projeto"));
 		
 		HardSkills hard2 = new HardSkills(null, "Servidores",pessoa);
 		hard2.getConhecimentos().addAll(Arrays.asList("Amazon S3","Apache","Heroku"));

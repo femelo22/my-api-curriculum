@@ -16,6 +16,7 @@ public class CursoDTO {
 		this.descricao = curso.getDescricao();
 		this.dataConclusao = curso.getDataConclusao();
 		this.linkCertificado = curso.getLinkCertificado();
+		this.pessoa = curso.getPessoa().getNome();
 	}
 
 	public String getDescricao() {
