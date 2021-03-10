@@ -71,7 +71,6 @@ public class PessoaResource {
 		return ResponseEntity.ok().body(endereco);
 	}
 	
-	
 
 	@GetMapping("/cursos-complementares")
 	public ResponseEntity<List<CursoDTO>> findCursos(){
